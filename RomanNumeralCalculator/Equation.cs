@@ -10,7 +10,6 @@ namespace RomanNumeralCalculator
     {
         RomanNumber romanNumber1;
         RomanNumber romanNumber2;
-        RomanNumber romanResult;
         int n1 = 0;
         int n2 = 0;
 
@@ -35,8 +34,7 @@ namespace RomanNumeralCalculator
 
         public int MultiplyNumbers()
         {
-            //I didn't have time to do the division and multiplication functions as we learned in class, so for now I'm just converting the..
-            //.. numbers and multiplying/dividing as normal
+          
             n1 = romanNumber1.Convert();
             n2 = romanNumber2.Convert();
 

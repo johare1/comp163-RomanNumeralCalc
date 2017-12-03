@@ -46,6 +46,14 @@ namespace RomanNumeralCalculator
             
         }
 
+        private void ClearCalc() {
+            isFirstNumber = true;
+            userInputNumber1 = String.Empty;
+            userInputNumber2 = String.Empty;
+            txtCalcOutput.Text = userInputNumber1;
+            txtConvertedNumber.Text = userInputNumber1;
+        }
+
 
 
         //-----------button click events--------------
@@ -89,6 +97,7 @@ namespace RomanNumeralCalculator
             else {
                 txtCalcOutput.Text = "ERR";
             }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -177,11 +186,22 @@ namespace RomanNumeralCalculator
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            isFirstNumber = true;
-            userInputNumber1 = String.Empty;
-            userInputNumber2 = String.Empty;
-            txtCalcOutput.Text = userInputNumber1;
-            txtConvertedNumber.Text = userInputNumber1;
+            ClearCalc();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (isFirstNumber == true)
+            {
+                userInputNumber1 = userInputNumber1.Remove(userInputNumber1.Length - 1);
+                txtCalcOutput.Text = userInputNumber1;
+            }
+            else if (isFirstNumber == false)
+            {
+                userInputNumber2 = userInputNumber2.Remove(userInputNumber2.Length - 1);
+                txtCalcOutput.Text = userInputNumber2;
+
+            }
         }
     }
 }
